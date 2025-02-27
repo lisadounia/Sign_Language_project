@@ -26,22 +26,26 @@ for letter in range(n_classes):
         #print text on the video
         cv2.putText(frame,"if ready to capture, press enter", (100, 50), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 0, 0), 3, cv2.LINE_AA)
         cv2.imshow('frame', frame) # Show the frame in a window named 'frame'
-        if cv2.waitKey(1) == 13:  #enter (in ascii) to change letter
-            break
+        # if cv2.waitKey(1) == 13:  #enter (in ascii) to change letter
+        #     print('start')
+        #     break
         if cv2.waitKey(1) == ord('q'): # q to quit
-            cap.release()
-            cv2.destroyAllWindows()
-            exit() 
+            print('start')
+            break
+            # cap.release()
+            # cv2.destroyAllWindows()
+            # exit() 
 
-# #Capture the pics and add them in the correct file 
-# count=0
-# while count< dataset_size :
-# ret, frame = cap.read()
-# cv2.imshow('frame',frame)
-# cv2.waitKey(25) # letting 25 milisec between each pic
-# #save the image
-# cv2.imwrite(os.path.join(data_dir,alphabet[letter]),"{}.jpg".format(counter),frame) 
-# counter+=1
+    #Capture the pics and add them in the correct file 
+    count=0
+    while count< dataset_size :
+            ret, frame = cap.read()
+            cv2.imshow('frame',frame)
+            print('pic taken')
+            cv2.waitKey(25) # letting 25 milisec between each pic
+            #save the image
+            cv2.imwrite(os.path.join(data_dir,alphabet[letter],"{}.jpg".format(count)),frame) 
+            count+=1
 
 #always release the cam and close window
 cap.release()
