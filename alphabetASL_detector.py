@@ -52,14 +52,10 @@ while True :
                     data_landmark.append(x)
                     data_landmark.append(y)
 
-        #start classify live
-        #predicted_letter = model.predict([np.asarray(data_landmark)]) # convert the list of landmark into a nparray, and we put the array into bracket to make a 2D array ( we need a 2D array for prediction)
-        
-        #MLP
+    
         predicted_letter_number = model.predict([np.asarray(data_landmark)])
         predicted_letter_number=predicted_letter_number[0]
         predicted_letter=alphabet[predicted_letter_number]
-        # prediction output : an numpy array with the letter in it ex: ['A']
 
         #display the letter on the screen
         cv2.putText(frame, predicted_letter, (x_text, y_text), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 0, 0), 5, cv2.LINE_AA)  # black contour
