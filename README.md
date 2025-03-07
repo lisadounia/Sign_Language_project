@@ -15,4 +15,4 @@ Sign_Language_project/
 │── img2landmarks.py            # Extracts landmarks from images (database)
 │── training_MLP.py              # Trains the MLP model with the landmarks
 │── mlp_model.p                  # Trained MLP model
-│── flip_images.py               # Data augmentation (Flips some images of the dataset to create a mirror effect)
+│── flip_images.py               # Flips some images of the dataset to create a mirror effect
